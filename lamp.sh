@@ -7,12 +7,13 @@ curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
 gpg --dry-run --quiet --import --import-options import-show /usr/share/keyrings/nginx-archive-keyring.gpg
 
 read -p "Are you sure? " -n 1 -r
-printf "\n"
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
+  printf "\n"
   exit 1
 fi
-  
+
+printf "\n"
 echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
 http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" \
   | sudo tee /etc/apt/sources.list.d/nginx.list
