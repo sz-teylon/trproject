@@ -32,6 +32,7 @@ sudo apt-get install -y software-properties-common \
 printf "\nconfig\n"
 sudo mkdir -p /etc/nginx/snippets/ \
  && sudo curl -o /etc/nginx/snippets/fastcgi-php.conf https://raw.githubusercontent.com/sz-teylon/trproject/master/fastcgi-php.conf \
+ && sudo curl -o /etc/nginx/fastcgi.conf https://raw.githubusercontent.com/sz-teylon/trproject/master/fastcgi.conf \
  && sudo curl -o /etc/nginx/snippets/general.conf https://raw.githubusercontent.com/sz-teylon/trproject/master/general.conf \
  && sudo curl -o /etc/nginx/snippets/php-default.conf https://raw.githubusercontent.com/sz-teylon/trproject/master/php-default.conf \
  && sudo curl -o /etc/nginx/snippets/ssl.conf https://raw.githubusercontent.com/sz-teylon/trproject/master/ssl.conf \
