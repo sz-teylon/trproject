@@ -1,9 +1,11 @@
 #!/bin/bash
 set -ex
 
+# need
+# sudo apt update && sudo apt install -yq curl gnupg2 ca-certificates lsb-release ubuntu-keyring
+
 # nginx ubuntu package ( http://nginx.org/en/linux_packages.html#Ubuntu )
 printf "\nsetup nginx\n"
-sudo apt update && sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring -y
 curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
   | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
     
