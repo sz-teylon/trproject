@@ -1,4 +1,6 @@
 #!/bin/bash
+set -ex
+
 # nginx ubuntu package ( http://nginx.org/en/linux_packages.html#Ubuntu )
 printf "\nsetup nginx\n"
 sudo apt update && sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring -y
