@@ -2,7 +2,7 @@
 set -ex
 
 # need
-# sudo apt update && sudo apt install -yq curl gnupg2 ca-certificates lsb-release ubuntu-keyring
+sudo apt update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq curl gnupg2 ca-certificates lsb-release ubuntu-keyring
 
 # nginx ubuntu package ( http://nginx.org/en/linux_packages.html#Ubuntu )
 printf "\nsetup nginx\n"
