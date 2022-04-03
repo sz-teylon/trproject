@@ -4,8 +4,6 @@ set -ex
 ### Install docker
 # Ref: https://docs.docker.com/engine/install/ubuntu/
 echo "Install docker"
-# Remove old
-sudo apt-get remove -yq docker docker-engine docker.io containerd runc
 
 # Required package
 sudo apt-get update && \
@@ -26,6 +24,7 @@ sudo apt-get update && sudo apt-get install -yq docker-ce docker-ce-cli containe
 ### Install docker compose
 # Ref: https://docs.docker.com/compose/install/
 echo "Install docker compose"
+
 # Download the current stable release of Docker Compose: (1.29.2)
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
