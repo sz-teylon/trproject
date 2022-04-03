@@ -9,7 +9,7 @@ printf "\nsetup nginx\n"
 curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor \
   | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
     
-gpg --dry-run --quiet --import --import-options import-show /usr/share/keyrings/nginx-archive-keyring.gpg
+gpg2 --dry-run --quiet --import --import-options import-show /usr/share/keyrings/nginx-archive-keyring.gpg
 printf "\n"
 
 echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
