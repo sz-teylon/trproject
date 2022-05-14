@@ -30,7 +30,7 @@ sudo apt-get install -y software-properties-common \
 
 # mariadb ( basic repo )
 printf "\nsetup mariadb\n"
-sudo apt install mariadb-server
+sudo apt install mariadb-server -y
 
 # copy congiguration
 printf "\nconfig\n"
