@@ -4,7 +4,7 @@ set -ex
 # Ubuntu 20.04 LTS (Focal)
 
 # (1) Prerequirement
-sudo apt update && sudo apt upgrade -y
+sudo apt update
 
 # (2) Install nginx
 sudo apt install nginx libnginx-mod-http-headers-more-filter -y
