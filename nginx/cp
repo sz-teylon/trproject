@@ -3,9 +3,9 @@ set -ex
 
 yum install gcc make gcc-c++ pcre-devel zlib-devel openssl-devel -yq
 
-curl -fLO http://nginx.org/download/nginx-1.22.0.tar.gz \
+curl -fsSLO http://nginx.org/download/nginx-1.22.0.tar.gz \
   && tar zxf nginx-1.22.0.tar.gz
-curl -fLO https://github.com/openresty/headers-more-nginx-module/archive/refs/tags/v0.34.tar.gz \
+curl -fsSLO https://github.com/openresty/headers-more-nginx-module/archive/refs/tags/v0.34.tar.gz \
   && tar zxf v0.34.tar.gz
 
 cd nginx-1.22.0 && \
