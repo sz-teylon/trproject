@@ -1,0 +1,30 @@
+#!/bin/bash
+set -ex
+
+yum update
+yum install gcc make gcc-c++ pcre-devel zlib-devel openssl-devel -yq
+
+curl -fLO http://nginx.org/download/nginx-1.22.0.tar.gz
+tar zxf nginx-1.22.0.tar.gz
+curl -fLO https://github.com/openresty/headers-more-nginx-module/archive/refs/tags/v0.34.tar.gz
+tar zxf v0.34.tar.gz
+
+cd nginx-1.22.0
+./configure 
+  --prefix=/usr/share/nginx \
+  --sbin-path=/usr/sbin/nginx \
+  --pid-path=/run/nginx.pid \
+  --lock-path=/run/nginx.lock \
+  --conf-path=/etc/nginx/nginx.conf \
+  --error-log-path=/var/log/nginx/error.log \
+  --http-log-path=/var/log/nginx/access.log \
+  --user=nginx \
+  --with-http_ssl_module \
+  --with-http_v2_module \
+  --with-http_mp4_module \
+  --with-http_gunzip_module \
+  --with-http_gzip_static_module \
+  --with-compat \
+  --add-module=../headers-more-nginx-module-0.34
+
+make
