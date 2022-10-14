@@ -1,6 +1,9 @@
 #!/bin/bash
 set -ex
 
+# RUN:
+# curl -fsSL https://raw.githubusercontent.com/sz-teylon/trproject/master/nginx/cp | sudo bash -
+
 yum install gcc make gcc-c++ pcre-devel zlib-devel openssl-devel -yq
 
 curl -fsSLO http://nginx.org/download/nginx-1.22.0.tar.gz \
