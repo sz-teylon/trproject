@@ -9,7 +9,7 @@ curl -fsSLO https://github.com/openresty/headers-more-nginx-module/archive/refs/
   && tar zxf v0.34.tar.gz
 
 cd nginx-1.22.0
-./configure 
+./configure \
   --prefix=/usr/share/nginx \
   --sbin-path=/usr/sbin/nginx \
   --pid-path=/run/nginx.pid \
