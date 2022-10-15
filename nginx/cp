@@ -30,3 +30,8 @@ cd nginx-1.22.0
   --add-module=../headers-more-nginx-module-0.34
 
 make
+
+curl -fsSL -o nginx.service https://raw.githubusercontent.com/sz-teylon/trproject/master/nginx/serv \
+  && cp nginx.service /lib/systemd/system/ \
+  && systemctl daemon-reload
+
