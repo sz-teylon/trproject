@@ -29,4 +29,4 @@ cd nginx-1.22.0
   --with-compat \
   --add-module=../headers-more-nginx-module-0.34
 
-sudo make
+make
