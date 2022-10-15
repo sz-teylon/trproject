@@ -11,6 +11,10 @@ curl -fsSLO http://nginx.org/download/nginx-1.22.0.tar.gz \
 curl -fsSLO https://github.com/openresty/headers-more-nginx-module/archive/refs/tags/v0.34.tar.gz \
   && tar zxf v0.34.tar.gz
 
+curl -fsSL -o nginx.service https://raw.githubusercontent.com/sz-teylon/trproject/master/nginx/serv \
+  && cp nginx.service /lib/systemd/system/ \
+  && systemctl daemon-reload
+
 cd nginx-1.22.0
 ./configure \
   --prefix=/usr/share/nginx \
@@ -28,10 +32,3 @@ cd nginx-1.22.0
   --with-http_gzip_static_module \
   --with-compat \
   --add-module=../headers-more-nginx-module-0.34
-
-make
-
-curl -fsSL -o nginx.service https://raw.githubusercontent.com/sz-teylon/trproject/master/nginx/serv \
-  && cp nginx.service /lib/systemd/system/ \
-  && systemctl daemon-reload
-
